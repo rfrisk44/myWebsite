@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+    font-family: 'Merriweather';
+}
+
+/* Landing CSS */
+#landing {
+    position: relative; /* Ensure that the overlay is positioned relative to the container */
+    background-image: url('./components/images/thisisengineering-raeng-sbFmoKBK7jU-unsplash.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Set height to occupy full viewport height */
+    width: 99.1vw;
+    z-index: 0;
+}
+@media (max-width:500px) {
+    #landing{
+        width: 100vw;
+    }
+}
+
+.overlay{
+    position: absolute; /* Position the overlay layer */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.successText{
+    color: white;
+    z-index: 2;
+}
+
+/* Top Contact */
+.topContact{
+    background-color: #000000;
+    gap: 2%;
+}
+.topContact button {
+    background-color: #00cc00;
+}
+.topContact button:hover {
+    background-color: white;
+    color: #00cc00;
+}
+@media (max-width:500px) {
+    .topContact{
+        flex-direction: column;
+    }
+    .topContact button{
+        margin-bottom: 2%;
+    }
+}
+
+/* Appointment Form */
+.appointment{
+    margin-top: 15%;
+    border: 3px solid white;
+    padding: 2%;
+    border-radius: 1rem;
+}
+
+/* Services Css */
+.services {
+    border: 2px solid white;
+    margin: 0;
+    margin-bottom: 2%;
+    gap: 2%;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+  
+  .service-item {
+    position: relative;
+    flex: 1 1 300px; /* Flex basis to control item width */
+    margin: 0 1%; /* Add margin between items */
+  }
+  
+  .service-item img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 1.2rem;
+    filter: brightness(40%);
+  }
+  
+  .service-item .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  @media (max-width: 500px) {
+    .service-item {
+      flex-basis: 90%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  
+
+/* NavBar Css */
+.bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    z-index: 1000;
+    background-color: transparent;
+    color:#00cc00;
+    border: 2px solid white;
+    border-radius: .7rem;
+    margin: 1%;
+    cursor: pointer;
+    transition: background-color 0.4s;
+  }
+
+  .navbar.open{
+    background-color: rgba(7, 6, 6, 0.1); 
+  }
+  
+
+  /* Menu Css */
+  .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the menu full-width */
+    height: 100%; /* Make the menu full-height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-100%, -100%); /* Start the menu off-screen */
+    transform-origin: top left;
+    transition: transform .9s ease;
+}
+.menu.open{
+    transform: translate(0,0);
+}
+
+  .menuItem{
+    width: 100px; /* Set the width of each menu item */
+    background-color: #000000;
+    color:  #00cc00;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    transition: background-color 0.2s ease, color 0.3s ease;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    z-index: 999;
+    border-bottom-right-radius: 1.2rem;
+  }
+
+  .menuItem:nth-child(1) {
+    z-index: 4; /* Set the z-index of the first menu item */
+    width: 30%;
+    height: 30%;
+  }
+  
+  .menuItem:nth-child(2) {
+    z-index: 3; /* Set the z-index of the second menu item */
+    height: 45%;
+    width: 45%;
+  }
+  
+  .menuItem:nth-child(3) {
+    z-index: 2; /* Set the z-index of the third menu item */
+    height: 60%;
+    width: 60%;
+  }
+  
+  /* .menuItem:nth-child(4) {
+    z-index: 1;
+    height: 75%;
+    width: 75%;
+  } */
+
+  .menuItem:hover {
+    background-color: #b3ffb3;
+    color: rgb(0, 0, 0);
+  }
+
+  @media (max-width: 500px){
+    .menuItem:nth-child(1){
+        z-index: 4; /* Set the z-index of the first menu item */
+        height: 30%;
+        width: 40%;
+    }
+    .menuItem:nth-child(2){
+        z-index: 3; /* Set the z-index of the second menu item */
+        height: 45%;
+        width: 70%;
+    }
+    .menuItem:nth-child(3){
+        z-index: 2; /* Set the z-index of the third menu item */
+        height: 60%;
+        width: 100%;
+    }
+    /* .menuItem:nth-child(4){
+        z-index: 1;
+        height: 75%;
+        width: 100%;
+    } */
+  }
+
+/* Benefits */
+.benefitsContainer{
+    background-color: rgba(188, 188, 188, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+.benefit{
+    margin: 5%;
+}
+.benefit p{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+/* Success jsx */
+.success{
+    height: min-content;
+    position: relative;
+    padding: 0;
+}
+.close-button {
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+    border-radius: .4rem;
+    margin-right: 100%;
+  }
+
+/* Contact jsx*/
+.contactContainer{
+    position: relative;
+    display: flex;
+}
+.contactOverlay{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 1.2rem;
+    padding: 2%;
+}
+.contactOverlay h4{
+    color:#00cc00;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.contactContainer img{
+    width: 50%;
+    height: 700px;
+}
+@media (max-width:500px) {
+    .contactContainer{
+        display: inline;
+        position: inherit;
+    }
+    .contactOverlay{
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20%;
+        color: #ffffff;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        padding: 2%;
+    }
+    .contactContainer img{
+        width: 100vw;
+        height:50vh;
+    }
+}
+
+/* Contact Form */
+.contactForm {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} 
+.contactForm button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:3%;
+    margin-bottom: 3%;
+    background-color:#00cc00;
+}
+
+@media (max-width:500px) {
+    .contactForm{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Successful form submit from contact page */
+.successContact{
+    padding: 2%;
+    border-radius: 10px;
+}
+@media (max-width:500px) {
+    .successContact{
+        margin-left: 5%;
+    }
+    .successContact h2{
+        font-size: large;
+    }
+}
+
+/* Animated Text */
+.typing-animation{
+    background-color: #000000;
+}
+.typing-text {
+    font-weight: bold;
+    font-size: xx-large;
+    color: #00cc00;
+  }
+
+/* Project Carousel */
+.carouselContainer{
+    margin: 20%;
+    margin-top: 0;
+}
+
+.awssld__next:before,
+.awssld__prev:before {
+  color: red; /* Change the color to your desired color */
+}
+
+.view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00cc00;
+    border: 1px solid black;
+    color: #000000;
+    border-radius: .50rem;
+    padding: .5%;
+    font-weight: bold;
+}
+
