@@ -83,7 +83,7 @@ const AppointmentForm = ({onClose}) => {
   };
 
   return (
-    <Container className='text-center appointment'>
+    <Container className='text-center appointment text'>
       {!formSubmitted ? (
         <div className="position-relative">
           <button className='close-button' style={{borderRadius:'.4rem', color:'red',marginRight:'100%'}} onClick={onClose}>

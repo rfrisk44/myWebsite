@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const AnimatedBottom = () => {
-  const words = ['Professional',
-    'Innovative',
-    'Customized',
-    'Responsive',
-    'Dynamic',
-    'Seamless',
-    'Engaging',
-    'Unique',
-    'Impactful'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
 
   useEffect(() => {
+    const words = [
+      'Professional',
+      'Innovative',
+      'Customized',
+      'Responsive',
+      'Dynamic',
+      'Engaging',
+      'Unique',
+      'Impactful'
+    ];
+
     const word = words[currentWordIndex];
     if (currentLetterIndex < word.length) {
       const timeoutId = setTimeout(() => {
@@ -31,7 +33,7 @@ const AnimatedBottom = () => {
       }, 750); // Adjust delay before clearing word and moving to the next one
       return () => clearTimeout(timeoutId);
     }
-  }, [currentWordIndex, currentLetterIndex, words]);
+  }, [currentWordIndex, currentLetterIndex]); // Removed 'words' from the dependency array
 
   return (
     <div className="typing-animation text-center">

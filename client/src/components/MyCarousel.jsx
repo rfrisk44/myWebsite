@@ -11,7 +11,7 @@ import { FaMagnifyingGlassDollar } from "react-icons/fa6";
 const MyCarousel = () => {
   return (
     <div style={{marginBottom:'2%'}} className='text-center'>
-        <Carousel autoPlay interval={3500} infiniteLoop showThumbs={false} showIndicators={true} showStatus={false} showArrows={true} swipeable={true}>
+        <Carousel autoPlay interval={3500} infiniteLoop showThumbs={false} showIndicators={true} showStatus={false} showArrows={false} swipeable={true}>
             {/* Change the carousel pictures */}
         <div>
         <div className='benefit'>

@@ -2,40 +2,32 @@
 
 body{
     font-family: 'Merriweather';
+    overflow-x: hidden;
 }
+
 
 /* Landing CSS */
 #landing {
-    position: relative; /* Ensure that the overlay is positioned relative to the container */
-    background-image: url('./components/images/thisisengineering-raeng-sbFmoKBK7jU-unsplash.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
+    position: relative;
+    color: rgb(255, 255, 255);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Set height to occupy full viewport height */
-    width: 99.1vw;
-    z-index: 0;
-}
-@media (max-width:500px) {
-    #landing{
-        width: 100vw;
-    }
+    height: 80vh;
+    border-radius: 2rem;
+    margin-top: 2%;
+    background: linear-gradient(to top, #00cc00, #000000);
 }
 
-.overlay{
-    position: absolute; /* Position the overlay layer */
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-.successText{
-    color: white;
-    z-index: 2;
+@media (max-width:500px) {
+    #landing{
+        border-radius: 0;
+        margin-top: 0;
+        display: block;
+    }
+    .overlay{
+        border-radius: 0%;
+    }
 }
 
 /* Top Contact */
@@ -104,6 +96,7 @@ body{
   @media (max-width: 500px) {
     .service-item {
       flex-basis: 90%; /* Adjust width for smaller screens */
+      margin-top: 1%;
     }
   }
   
@@ -118,7 +111,7 @@ body{
     z-index: 1000;
     background-color: transparent;
     color:#00cc00;
-    border: 2px solid white;
+    border: 2px solid rgb(159, 159, 159);
     border-radius: .7rem;
     margin: 1%;
     cursor: pointer;
@@ -203,23 +196,19 @@ body{
     .menuItem:nth-child(1){
         z-index: 4; /* Set the z-index of the first menu item */
         height: 30%;
-        width: 40%;
+        width: 45vw;
     }
     .menuItem:nth-child(2){
         z-index: 3; /* Set the z-index of the second menu item */
         height: 45%;
-        width: 70%;
+        width: 70vw;
     }
     .menuItem:nth-child(3){
         z-index: 2; /* Set the z-index of the third menu item */
         height: 60%;
-        width: 100%;
+        width: 100vw;
     }
-    /* .menuItem:nth-child(4){
-        z-index: 1;
-        height: 75%;
-        width: 100%;
-    } */
+
   }
 
 /* Benefits */
@@ -228,8 +217,9 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 auto;
     margin-bottom: 2%;
+    overflow-x: hidden;
+    border-radius: 1.2rem;
 }
 .benefit{
     margin: 5%;
@@ -237,6 +227,15 @@ body{
 .benefit p{
     padding-left: 15%;
     padding-right: 15%;
+}
+@media (max-width:500px) {
+    .benefitsContainer{
+        display: block;
+    }
+    .benefit{
+        margin: 0;
+        padding: 1%;
+    }
 }
 
 /* Success jsx */

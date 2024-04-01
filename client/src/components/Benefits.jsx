@@ -7,15 +7,17 @@ import { FaGlobe } from "react-icons/fa";
 import { FaMagnifyingGlassDollar } from "react-icons/fa6";
 import MyCarousel from './MyCarousel';
 import { useMediaQuery } from 'react-responsive';
+import { Container } from 'react-bootstrap';
 
 const Benefits = () => {
-  // Condition to determine whether to show the carousel on mobile
   const isMobile = useMediaQuery({ maxWidth: 500 });
 
   return (
-    <div className='benefitsContainer text-center'>
+  <div className='text-center'>
+    <h2 className='text-decoration-underline'>Benefits</h2>
+    <Container className='benefitsContainer'>
       {isMobile ? (
-        <MyCarousel /> // Render carousel component on mobile
+        <MyCarousel />
       ) : (
         <>
           <div>
@@ -56,6 +58,7 @@ const Benefits = () => {
           </div>
           </>
       )}
+    </Container>
     </div>
   )
 }
